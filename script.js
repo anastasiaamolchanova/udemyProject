@@ -53,7 +53,7 @@ function chooseOptExpenses() {
 
 function checkSavings() {
     if (appData.savings == true) {
-        let save = +prompt('Яка сума накопичувань?'),
+        let save = +prompt('Яка сума накопичувань? '),
             percent = +prompt('Який відсоток?');
 
         appData.monthIncome = save / 100 / 12 * percent;
