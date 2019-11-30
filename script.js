@@ -51,9 +51,23 @@ function chooseOptExpenses() {
 
 }
 
+function detectLevel() {
+    if (appData.moneyPerDay < 300) {
+        console.log("Це мінімальний рівень достатку!");
+    } else if (appData.moneyPerDay > 300 && appData.moneyPerDay < 2000) {
+        console.log("Це середній рівень достатку!");
+    } else if (appData.moneyPerDay > 2000) {
+        console.log("Це високий рівень достатку!");
+    } else {
+        console.log("Щось пішло не так...!");
+    }
+}
+detectLevel();
+
+
 function checkSavings() {
     if (appData.savings == true) {
-        let save = +prompt('Яка сума накопичувань? '),
+        let save = +prompt('Яка сума накопичувань?'),
             percent = +prompt('Який відсоток?');
 
         appData.monthIncome = save / 100 / 12 * percent;
