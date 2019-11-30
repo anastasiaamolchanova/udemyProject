@@ -23,7 +23,7 @@ let appData = {
 
 function chooseExpenses() {
     for (let i = 0; i < 2; i++) {
-        let a = prompt("Введіть обов/'язкову статтю витрат");
+        let a = prompt("Введіть обов'язкову статтю витрат");
         let b = prompt("У скільки обійдеться?");
 
         if ((typeof (a)) === 'string' && (typeof (a)) != null && (typeof (b)) != null &&
@@ -40,16 +40,11 @@ function chooseExpenses() {
 chooseExpenses();
 
 function detectDayBudget() {
-    alert((appData.budget / 30).toFixed(1));
+    appData.moneyPerDay = (appData.budget / 30).toFixed(1);
+    alert("Бюджет на день: " + appData.moneyPerDay + "грн");
 }
 
 detectDayBudget();
-
-function chooseOptExpenses() {
-    let a = prompt('Стаття необов\'язкових витрат?');
-    appData.optionalExpenses[1] = a;
-
-}
 
 function detectLevel() {
     if (appData.moneyPerDay < 300) {
@@ -76,3 +71,10 @@ function checkSavings() {
 }
 
 checkSavings();
+
+function chooseOptExpenses() {
+    let a = prompt('Стаття необов\'язкових витрат?');
+    appData.optionalExpenses[1] = a;
+}
+
+chooseOptExpenses()
